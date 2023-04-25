@@ -17,7 +17,7 @@ export const authOptions = {
       name: "credentials",
         credentials: {
           email: { label: "email", type: "text" },
-          password: { label: "password", type: "password" },
+          password: { label: "password", type: "password" , autocomplete:'on' },
           // name: { label: "name", type: "text" },
       },
 

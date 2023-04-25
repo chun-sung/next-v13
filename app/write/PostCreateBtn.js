@@ -6,8 +6,8 @@ import { useState } from "react"
 
 
 export default function PostCreateBtn() {
-    const [title, setTitle] = useState();
-    const [content, setContent] = useState();
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
 
     const router = useRouter();
 
@@ -20,6 +20,13 @@ export default function PostCreateBtn() {
             setContent(e.target.value)
         }}/>
         <button className="block w-20 p-1 h-8 rounded m-auto bg-red-500 hover:bg-red-700" onClick={()=>{
+            if(title == '') { 
+                alert('제목을 입력하세요') 
+                return;
+            } else if(content == '') {
+                alert('내용을 입력하세요')
+                return;
+            }
             fetch('/api/post/new' ,{
                 method: 'POST',
                 body: JSON.stringify({title, content}),

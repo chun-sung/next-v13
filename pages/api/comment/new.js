@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(req, res) {
-    console.log(req.body)
+    // console.log(req.body)
     req.body = JSON.parse(req.body);             // JSON문자열을 객체로 변환
 
     
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
         let session = await getServerSession(req, res, authOptions)   // 사용자 정보 서버에서 가져오기
 
-        console.log('세션',session)
+        // console.log('세션',session)
         
         if(session == null) {            
             res.status(200).json({msg: 'loginFail2'})
