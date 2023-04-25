@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         try {
             const db = (await connectDB).db('forum')        
             let result = await db.collection('post').deleteOne({_id: new ObjectId(req.body)})
-            console.log(result)                    //{ acknowledged: true, deletedCount: 1 }
+            // console.log(result)                    //{ acknowledged: true, deletedCount: 1 }
             
             res.status(200).json({msg:'삭제완료'})
 

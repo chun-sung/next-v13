@@ -7,26 +7,15 @@ export default async function handler(req, res) {
     // console.log(req.body)
     req.body = JSON.parse(req.body);             // JSON문자열을 객체로 변환
 
-    
-
-
-
-
     if(req.method == 'POST') {
 
         let session = await getServerSession(req, res, authOptions)   // 사용자 정보 서버에서 가져오기
-
         // console.log('세션',session)
         
         if(session == null) {            
-            res.status(200).json({msg: 'loginFail2'})
+            res.status(200).json({msg: 'loginFail'})
             return;
         }        
-
-        if(session?.user == null) {
-            let guest = {msg : 'loginFail' }            
-            return res.json(guest)
-        }
 
         let commentData = {
             content: req.body.comment,
