@@ -13,7 +13,7 @@ export default function Test() {
             <div>Redux State: {name}</div>        
             <button className="bg-red-300 rounded-lg w-52 mt-10 p-2 hover:bg-red-400" onClick={()=> {
                 dispatch(SET_NAME('John'))
-            }}>Click me (Jonh)</button>
+            }}>Click me (John)</button>
         </>
     )
 }

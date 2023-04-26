@@ -10,7 +10,10 @@ export default function Seo({ title = '애플'  } ) {
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
             {/* 테마 색상/파비콘/manifest 파일 지정 */}
             <link rel="icon" href="/favicon.ico" />
-            <meta name="theme-color" content="#cfffb9" />
+            {/* <meta name="theme-color" content="#cfffb9" /> */}
+            <link rel="manifest" href="/manifest.json" />
+            <meta name="theme-color" content="#000000" />
+
             {/* <link rel="manifest" href="/manifest.json" />  */}
         {/* </Head> */}
     </>
