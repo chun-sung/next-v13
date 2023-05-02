@@ -35,7 +35,7 @@ export default function ListItem() {
     if(isLoading) return <div className="text-center p-2 bg-red-300 w-36 rounded-lg m-auto">Loading...</div>
 
     // useQuery 에러처리
-    if(error) return <pre>{JSON.stringify(postQuery.error)}</pre>
+    if(error) return <pre>{JSON.stringify(error)}</pre>
 
     // const DelPostMutation = useMutation({
     //     mutationFn: (obj) => fetch('/api/post/delete', obj)
